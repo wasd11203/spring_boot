@@ -1,2 +1,1 @@
- hello world é¡¹ç›®:
-ä¸»è¦å±•ç¤ºäº† spring boot é¡¹ç›®çš„åŸºæœ¬é¡¹ç›®ç»“æ„.
+ÏîÄ¿¼¯³ÉÁË spring boot,mybatis.×¢£º mybatis ÊÇ¼òµ¥µÄÍ¨¹ıproperties À´ÅäÖÃµÄ

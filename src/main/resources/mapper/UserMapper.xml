@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.cb.dao.DemoDao">
+
+    <!-- 所有列 -->
+    <sql id="Column_list">
+        id,
+        name
+    </sql>
+
+    <resultMap id="ListTest" type="com.cb.entity.Demo" >
+        <id  column="id" property="id" />
+        <result column="name" property="name" />
+    </resultMap>
+
+    <select id="countAll" resultType="Integer">
+        SELECT
+        count(*) 
+        FROM demo
+    </select>
+    
+    <insert id="save" parameterType="com.cb.entity.Demo" >
+    	insert into demo ( <include refid="Column_list" /> ) value( #{id},#{name})
+    </insert>
+    
+    <select id="findByPage" parameterType="Map" resultMap="ListTest">
+    
+        SELECT
+        <include refid="Column_list" />
+        FROM demo 
+        order by id 
+        limit #{startIndex},#{pageSize}
+    </select>
+
+</mapper>
