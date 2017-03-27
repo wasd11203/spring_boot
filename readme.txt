@@ -1,2 +1,3 @@
- hello world 项目:
-主要展示了 spring boot 项目的基本项目结构.
+这个项目 主要是 spring boot + jpa 的整合
+1. jpa 使用的默认的 hibernate 
+2. 前端显示的方式 是 jsp 
