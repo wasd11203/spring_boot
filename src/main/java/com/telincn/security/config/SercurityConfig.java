@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @EnableGlobalMethodSecurity(prePostEnabled = true) //启用Security注解，例如最常用的@PreAuthorize
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 public class SercurityConfig extends WebSecurityConfigurerAdapter{
+	
 	public static Logger logger = LoggerFactory.getLogger(SercurityConfig.class);
 
 	@Autowired
@@ -37,8 +38,8 @@ public class SercurityConfig extends WebSecurityConfigurerAdapter{
 			.csrf().disable()
 			.authorizeRequests()
 			.anyRequest().authenticated()
-			.and().logout().logoutUrl("/logout").logoutSuccessUrl("/").invalidateHttpSession(true)
-			.permitAll();
+			.and().formLogin().loginPage("/login").successForwardUrl("/index").permitAll()
+			.and().logout().logoutUrl("/logout").logoutSuccessUrl("/login").permitAll();
 	}
 
 	@Override

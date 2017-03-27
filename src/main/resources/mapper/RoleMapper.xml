@@ -14,4 +14,16 @@
 		ass.USER_ID = #{userId,jdbcType=DECIMAL}
   </select>
 
+  <select id="selectRoles" resultMap="BaseResultMap">
+  	select ROLE_ID,ROLE_NAME
+  	from 
+  		ROLE
+  </select>
+	
+  <select id="loadSourceWithRoleAssociation" resultType="Map">
+  	select * 
+  	from 
+  		SOURCE source left join ASSOCIATION_SOURCE_ROLE ass on source.SOURCE_ID = ass.SOURCE_ID inner join ROLE on ass.ROLE_ID = ROLE.ROLE_ID
+  </select>
+
 </mapper>

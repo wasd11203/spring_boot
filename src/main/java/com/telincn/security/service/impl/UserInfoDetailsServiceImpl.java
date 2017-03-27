@@ -48,12 +48,11 @@ public class UserInfoDetailsServiceImpl implements UserDetailsService{
 		}
 		
 		user.setRoleList(roleList);
-		
 		//将权限设置到author中去，交给spring security 再遇到@PreAuthorize注解时用来表示当前用户所用有的权限
         for (Role role : roleList) {
         	authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
         }
-	        
+        
 		UserInfoDetails uid = new UserInfoDetails(user.getUsername(), user.getPassword(), authorities);
 		uid.setUser(user);
 		

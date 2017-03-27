@@ -1,5 +1,7 @@
 package com.telincn.service;
 
-public interface UserService {
+import com.telincn.entity.User;
 
+public interface UserService {
+	public User selectUserByName(String username);
 }
