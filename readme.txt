@@ -1,1 +1,1 @@
-项目集成了 spring boot,mybatis.注： mybatis 是简单的通过properties 来配置的
+项目集成了spring boot，mybatis，durid。其中mybatis，durid 的配置是通过java config 完成的。
