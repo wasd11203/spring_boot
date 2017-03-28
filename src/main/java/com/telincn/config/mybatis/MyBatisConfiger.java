@@ -16,8 +16,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
 /**
- * MyBatis基础配置
- * 
+ * MyBatis基础配置：
+ * 	使用指定的dataSource 
+ * 	加载指定文件夹下的映射文件
  * @author ganzhigang
  * 时间：2017年3月20日 上午8:41:48
  */

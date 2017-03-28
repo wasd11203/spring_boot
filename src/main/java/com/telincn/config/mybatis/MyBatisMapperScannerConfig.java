@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * MyBatis扫描接口
- * 
+ * 	扫描 映射器所在的包
  * @author ganzhigang
  * 时间：2017年3月20日 上午8:42:14
  */

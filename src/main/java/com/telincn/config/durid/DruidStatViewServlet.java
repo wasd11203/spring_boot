@@ -5,6 +5,13 @@ import javax.servlet.annotation.WebServlet;
   
 import com.alibaba.druid.support.http.StatViewServlet;  
   
+/**
+ * 监控 durid 连接池 的相关url
+ *  访问下列url即可监控到durid 的使用状态
+ *  
+ * @author ganzhigang
+ * 时间：2017年3月28日 上午9:32:15
+ */
 @WebServlet(urlPatterns="/druid/*",  
     initParams={  
          @WebInitParam(name="allow",value="127.0.0.1,192.168.163.1"),// IP白名单(没有配置或者为空，则允许所有访问)  

@@ -1,14 +1,20 @@
 package com.telincn.entity;
 
-import java.util.List;
+import java.io.Serializable;
 
-public class User {
+/**
+ * 实体类
+ * 
+ * @author ganzhigang
+ * 时间：2017年3月28日 上午9:39:20
+ */
+public class User implements Serializable{
+	
+	private static final long serialVersionUID = 1076497656470735561L;
 	
 	private Integer userId;
 	private String username;
 	private String password;
-	
-	private List<Role> roleList;
 	
 	public User(){
 	}
@@ -37,12 +43,8 @@ public class User {
 		this.password = password;
 	}
 
-	public List<Role> getRoleList() {
-		return roleList;
-	}
-
-	public void setRoleList(List<Role> roleList) {
-		this.roleList = roleList;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override
@@ -50,7 +52,6 @@ public class User {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + ((roleList == null) ? 0 : roleList.hashCode());
 		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
@@ -70,11 +71,6 @@ public class User {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (roleList == null) {
-			if (other.roleList != null)
-				return false;
-		} else if (!roleList.equals(other.roleList))
-			return false;
 		if (userId == null) {
 			if (other.userId != null)
 				return false;
@@ -90,8 +86,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", roleList=" + roleList
-				+ "]";
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + "]";
 	}
-	
+
 }

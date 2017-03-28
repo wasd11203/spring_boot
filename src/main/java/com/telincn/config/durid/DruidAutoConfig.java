@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 /**
- * 
+ * 初始化 durid 连接池
  * @author ganzhigang
  *
  * 时间：2017年3月20日 上午8:40:29

@@ -17,33 +17,24 @@ public class HelloController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("/hello")
-	public String hello (){
+	@RequestMapping("/saveToredis")
+	public String save (){
 		
-		User u = userService.selectUserByName("aa");
-		logger.debug(u.getPassword());
+		String u = userService.saveToRedis("aa");
+		logger.debug(u);
 		
 		return "aa";
 	}
 	
-	@RequestMapping("/index")
-	public String index (){
+	@RequestMapping("/delFromredis")
+	public String delFrom (){
 		
-		return "index";
+		String u = userService.delFromCache("aa");
+		logger.debug(u);
+		
+		return "aa";
 	}
 	
-	@RequestMapping("/fn")
-	public String fn (){
-		return "fn";
-	}
 	
-	@RequestMapping("/test")
-	public String test (){
-		
-		User u = userService.selectUserByName("aa");
-		logger.debug(u.getPassword());
-		
-		return "aaasdf";
-	}
-
+	
 }
