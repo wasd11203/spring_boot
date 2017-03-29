@@ -1,7 +1,5 @@
 package com.telincn.service;
 
-import com.telincn.entity.User;
-
 /**
  * 业务层
  * @author ganzhigang
@@ -9,9 +7,7 @@ import com.telincn.entity.User;
  */
 public interface UserService {
 	
-	public void test();
-	
 	public String saveToRedis(String username);
 	
-	public String delFromCache(String username);
+	public String delFromRedis(String username);
 }

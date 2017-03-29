@@ -1,5 +1,7 @@
 package com.telincn.test;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,19 +10,23 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.telincn.WebApplicationConfiguration;
-import com.telincn.service.UserService;
+import com.telincn.entity.User;
+import com.telincn.util.redis.RedisRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = WebApplicationConfiguration.class)
 @WebAppConfiguration
-public class TestDao {
+public class TestRedis {
 
 	@Autowired
-	private UserService userService;
+	private RedisRepository redisRepository;
 	
 	@Test
 	public void test(){
-		System.out.println(userService.saveToRedis("aa"));
+		User user = new User();
+		redisRepository.saveToRedis("a", "b");
+		redisRepository.saveToRedis("a", "c", 60L, TimeUnit.SECONDS);
+		redisRepository.saveToRedis("a", user.toString());
 	}
 	
 	

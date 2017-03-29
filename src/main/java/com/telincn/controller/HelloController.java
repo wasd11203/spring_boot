@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.telincn.entity.User;
 import com.telincn.service.UserService;
 
 @RestController
@@ -23,13 +22,13 @@ public class HelloController {
 		String u = userService.saveToRedis("aa");
 		logger.debug(u);
 		
-		return "aa";
+		return u;
 	}
 	
 	@RequestMapping("/delFromredis")
 	public String delFrom (){
 		
-		String u = userService.delFromCache("aa");
+		String u = userService.delFromRedis("aa");
 		logger.debug(u);
 		
 		return "aa";
