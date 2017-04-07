@@ -1,2 +1,2 @@
- hello world é¡¹ç›®:
-ä¸»è¦å±•ç¤ºäº† spring boot é¡¹ç›®çš„åŸºæœ¬é¡¹ç›®ç»“æ„.
+this project is integrate spring boot framework ,freemarker .
+µ±Ç°ÏîÄ¿ÕûºÏÁËspring boot,freemarker .
